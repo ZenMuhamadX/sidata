@@ -39,7 +39,7 @@ export const PublicOnlyRoute: React.FC<ProtectedRouteProps> = ({ children }) => 
   }
 
   if (isAuthenticated) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/dashboard" replace />;
   }
 
   return <>{children}</>;

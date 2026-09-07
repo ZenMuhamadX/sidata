@@ -24,7 +24,7 @@ export const LoginForm: React.FC = () => {
     try {
       setIsSubmitting(true);
       await login({ email: trimmedEmail, password });
-      navigate('/', { replace: true });
+      navigate('/dashboard', { replace: true });
     } catch (err: unknown) {
       if (err && typeof err === 'object' && 'message' in err) {
         setErrorMessage(String((err as { message: string }).message));
@@ -79,7 +79,7 @@ export const LoginForm: React.FC = () => {
 
       <button
         type="submit"
-        className="btn-submit"
+        className="btn-primary"
         disabled={isSubmitting}
       >
         {isSubmitting ? 'Memproses...' : 'Masuk ke Sistem'}
