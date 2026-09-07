@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import type { Student } from '../types/student.types';
 import type { Parent } from '../../parents/types/parent.types';
 import { formatIndonesianDate } from '../utils/formatters';
+import { StudentDocumentsSection } from '../../documents/components/StudentDocumentsSection';
 
 interface StudentDetailProps {
   student: Student;
@@ -391,8 +392,15 @@ export const StudentDetail: React.FC<StudentDetailProps> = ({
               )}
             </div>
           </div>
+      {/* 5. DATA ORANG TUA (STAGE 5 INTEGRATION) */}
         </div>
       </div>
+
+      {/* 6. DOKUMEN SISWA (STAGE 6 INTEGRATION) */}
+      <StudentDocumentsSection
+        studentId={student.id}
+        studentName={student.nama}
+      />
     </div>
   );
 };
