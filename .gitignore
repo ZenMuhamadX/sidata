@@ -24,6 +24,8 @@ dist-ssr
 *.sln
 *.sw?
 
+bun.lock
+
 # Environment files
 .env
 .env.local
