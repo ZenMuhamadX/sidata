@@ -1803,5 +1803,18 @@ button.doc-status-badge:hover {
   color: #b91c1c !important;
 }
 
+.student-name-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.student-subtext {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  line-height: 1.2;
+}
+
 
 
