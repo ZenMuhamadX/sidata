@@ -5,7 +5,13 @@ import { LoginPage } from '../../features/auth/pages/LoginPage';
 import { AppShell } from '../../components/layout/AppShell';
 import { DashboardPage } from '../../pages/dashboard/DashboardPage';
 import { StudentsPage } from '../../pages/students/StudentsPage';
+import { StudentCreatePage } from '../../pages/students/StudentCreatePage';
+import { StudentDetailPage } from '../../pages/students/StudentDetailPage';
+import { StudentEditPage } from '../../pages/students/StudentEditPage';
 import { ParentsPage } from '../../pages/parents/ParentsPage';
+import { ParentCreatePage } from '../../pages/parents/ParentCreatePage';
+import { ParentDetailPage } from '../../pages/parents/ParentDetailPage';
+import { ParentEditPage } from '../../pages/parents/ParentEditPage';
 import { DocumentsPage } from '../../pages/documents/DocumentsPage';
 import { ImportPage } from '../../pages/import/ImportPage';
 import { ExportPage } from '../../pages/export/ExportPage';
@@ -34,8 +40,20 @@ export const AppRouter: React.FC = () => {
         >
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<DashboardPage />} />
+          
+          {/* Data Siswa Routes */}
           <Route path="/siswa" element={<StudentsPage />} />
+          <Route path="/siswa/tambah" element={<StudentCreatePage />} />
+          <Route path="/siswa/:id" element={<StudentDetailPage />} />
+          <Route path="/siswa/:id/edit" element={<StudentEditPage />} />
+
+          {/* Data Orang Tua Routes */}
           <Route path="/orang-tua" element={<ParentsPage />} />
+          <Route path="/orang-tua/tambah" element={<ParentCreatePage />} />
+          <Route path="/orang-tua/:id" element={<ParentDetailPage />} />
+          <Route path="/orang-tua/:id/edit" element={<ParentEditPage />} />
+
+          {/* Placeholders */}
           <Route path="/dokumen" element={<DocumentsPage />} />
           <Route path="/import" element={<ImportPage />} />
           <Route path="/export" element={<ExportPage />} />
