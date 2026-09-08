@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
   Calendar,
+  TrendingUp,
   UserPlus,
   Users,
   UserCheck,
@@ -68,6 +69,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             <NavLink to="/tahun-ajaran" className={navItemClass} onClick={onClose}>
               <Calendar size={18} className="nav-icon" />
               <span>Tahun Ajaran</span>
+            </NavLink>
+            <NavLink to="/kenaikan-kelas" className={navItemClass} onClick={onClose}>
+              <TrendingUp size={18} className="nav-icon" />
+              <span>Kenaikan Kelas</span>
             </NavLink>
             <NavLink to="/calon-siswa" className={navItemClass} onClick={onClose}>
               <UserPlus size={18} className="nav-icon" />

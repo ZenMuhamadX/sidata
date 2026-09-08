@@ -319,6 +319,24 @@ export interface Database {
           message: string;
         };
       };
+      process_class_promotion: {
+        Args: {
+          p_academic_year_from: string;
+          p_academic_year_to: string;
+          p_kelas_from: number;
+          p_decisions: Json;
+        };
+        Returns: {
+          success: boolean;
+          academic_year_from: string;
+          academic_year_to: string;
+          kelas_from: number;
+          total_processed: number;
+          promoted_count: number;
+          retained_count: number;
+          message: string;
+        };
+      };
     };
     Enums: Record<string, unknown>;
     CompositeTypes: Record<string, unknown>;

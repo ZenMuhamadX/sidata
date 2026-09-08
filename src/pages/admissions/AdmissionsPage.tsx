@@ -165,15 +165,15 @@ export const AdmissionsPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Filters Bar */}
-      <AdmissionFiltersBar
-        filters={filters}
-        academicYears={academicYears}
-        onChange={handleFilterChange}
-      />
+      {/* Table Section Card */}
+      <div className="section-card">
+        {/* Filters Bar */}
+        <AdmissionFiltersBar
+          filters={filters}
+          academicYears={academicYears}
+          onChange={handleFilterChange}
+        />
 
-      {/* Table Section */}
-      <div className="section-card p-0">
         <AdmissionListTable
           admissions={admissions}
           isLoading={isLoading}

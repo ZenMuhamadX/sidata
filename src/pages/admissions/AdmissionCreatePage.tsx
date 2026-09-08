@@ -417,7 +417,7 @@ export const AdmissionCreatePage: React.FC = () => {
         </div>
 
         {/* Form Actions */}
-        <div className="form-actions-bar">
+        <div className="form-actions-footer">
           <button
             type="button"
             onClick={() => navigate('/calon-siswa')}

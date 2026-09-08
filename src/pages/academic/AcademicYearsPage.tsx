@@ -134,7 +134,7 @@ export const AcademicYearsPage: React.FC = () => {
       )}
 
       {/* Main Table Card */}
-      <div className="section-card p-0">
+      <div className="section-card">
         <AcademicYearList
           academicYears={academicYears}
           isLoading={isLoading}

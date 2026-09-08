@@ -19,6 +19,7 @@ import { AcademicYearsPage } from '../../pages/academic/AcademicYearsPage';
 import { AdmissionsPage } from '../../pages/admissions/AdmissionsPage';
 import { AdmissionCreatePage } from '../../pages/admissions/AdmissionCreatePage';
 import { AdmissionDetailPage } from '../../pages/admissions/AdmissionDetailPage';
+import { ClassPromotionPage } from '../../pages/promotion/ClassPromotionPage';
 
 export const AppRouter: React.FC = () => {
   return (
@@ -47,6 +48,9 @@ export const AppRouter: React.FC = () => {
           
           {/* Tahun Ajaran Route */}
           <Route path="/tahun-ajaran" element={<AcademicYearsPage />} />
+
+          {/* Kenaikan Kelas Route */}
+          <Route path="/kenaikan-kelas" element={<ClassPromotionPage />} />
 
           {/* Calon Siswa / Admission Routes */}
           <Route path="/calon-siswa" element={<AdmissionsPage />} />

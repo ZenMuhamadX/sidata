@@ -673,9 +673,28 @@ button:disabled {
 .page-header-row {
   display: flex;
   justify-content: space-between;
-  align-items: flex-start;
+  align-items: center;
   gap: 1rem;
   flex-wrap: wrap;
+}
+
+.page-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.page-actions-group .btn-secondary,
+.page-actions-group .btn-primary {
+  height: 38px;
+  box-sizing: border-box;
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  gap: 0.35rem;
 }
 
 .btn-link-back {
@@ -1937,4 +1956,153 @@ button.doc-status-badge:hover {
   background-color: #f1f5f9;
   color: #64748b;
   border: 1px solid #e2e8f0;
+}
+
+/* Stage 13: Promotion & General Config Card */
+.promotion-config-body {
+  padding: 1.25rem 1.5rem;
+}
+
+.config-card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.config-card-footer .config-target-info {
+  font-size: 0.875rem;
+  color: var(--text-secondary);
+}
+
+.config-card-footer .config-target-highlight {
+  font-weight: 500;
+  color: var(--text-main);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.config-card-footer .btn-primary {
+  margin-left: auto;
+}
+
+.promotion-table-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background-color: #f8fafc;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+
+.promotion-stats-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 0.875rem;
+  flex-wrap: wrap;
+}
+
+.promotion-stat-item {
+  color: var(--text-secondary);
+}
+
+.promotion-stat-item strong {
+  color: var(--text-main);
+}
+
+.promotion-stat-success {
+  color: var(--success-text);
+}
+
+.promotion-stat-warning {
+  color: var(--warning-text);
+}
+
+.promotion-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.promotion-callout-warning {
+  margin: 1rem 1.25rem 0;
+  padding: 0.75rem 1rem;
+  background-color: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  border-radius: var(--radius);
+  color: var(--warning-text);
+}
+
+.promotion-callout-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.promotion-callout-desc {
+  font-size: 0.8125rem;
+  margin-top: 0.25rem;
+  color: #78350f;
+}
+
+/* Decision segmented button group */
+.decision-btn-group {
+  display: inline-flex;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.decision-btn {
+  padding: 0.3125rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border: none;
+  background-color: var(--surface);
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.decision-btn:hover:not(.active-promote):not(.active-retain) {
+  background-color: #f8fafc;
+  color: var(--text-main);
+}
+
+.decision-btn.active-promote {
+  background-color: var(--primary);
+  color: #ffffff;
+}
+
+.decision-btn.active-retain {
+  background-color: #d97706;
+  color: #ffffff;
+}
+
+.decision-btn + .decision-btn {
+  border-left: 1px solid var(--border);
+}
+
+.row-has-target-record {
+  background-color: #fffbeb !important;
+}
+
+.promotion-summary-box {
+  padding: 1rem;
+  margin: 0.75rem 0;
+  background-color: #f8fafc;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
 }
