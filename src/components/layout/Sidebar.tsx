@@ -4,6 +4,7 @@ import {
   LayoutDashboard,
   Calendar,
   TrendingUp,
+  GraduationCap,
   UserPlus,
   Users,
   UserCheck,
@@ -73,6 +74,10 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             <NavLink to="/kenaikan-kelas" className={navItemClass} onClick={onClose}>
               <TrendingUp size={18} className="nav-icon" />
               <span>Kenaikan Kelas</span>
+            </NavLink>
+            <NavLink to="/kelulusan" className={navItemClass} onClick={onClose}>
+              <GraduationCap size={18} className="nav-icon" />
+              <span>Kelulusan</span>
             </NavLink>
             <NavLink to="/calon-siswa" className={navItemClass} onClick={onClose}>
               <UserPlus size={18} className="nav-icon" />

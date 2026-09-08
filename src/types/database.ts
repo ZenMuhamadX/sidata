@@ -8,7 +8,7 @@ export type Json =
 
 export type Agama = 'Islam' | 'Kristen' | 'Katolik' | 'Hindu' | 'Buddha' | 'Konghucu';
 export type JenisKelamin = 'L' | 'P';
-export type StatusSiswa = 'aktif' | 'tidak_aktif';
+export type StatusSiswa = 'aktif' | 'tidak_aktif' | 'inactive';
 export type ParentHubungan = 'ayah' | 'ibu';
 
 export interface StudentRow {

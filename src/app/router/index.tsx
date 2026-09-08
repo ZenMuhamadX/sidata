@@ -20,6 +20,7 @@ import { AdmissionsPage } from '../../pages/admissions/AdmissionsPage';
 import { AdmissionCreatePage } from '../../pages/admissions/AdmissionCreatePage';
 import { AdmissionDetailPage } from '../../pages/admissions/AdmissionDetailPage';
 import { ClassPromotionPage } from '../../pages/promotion/ClassPromotionPage';
+import { GraduationPage } from '../../pages/graduation/GraduationPage';
 
 export const AppRouter: React.FC = () => {
   return (
@@ -51,6 +52,9 @@ export const AppRouter: React.FC = () => {
 
           {/* Kenaikan Kelas Route */}
           <Route path="/kenaikan-kelas" element={<ClassPromotionPage />} />
+
+          {/* Kelulusan Route */}
+          <Route path="/kelulusan" element={<GraduationPage />} />
 
           {/* Calon Siswa / Admission Routes */}
           <Route path="/calon-siswa" element={<AdmissionsPage />} />
