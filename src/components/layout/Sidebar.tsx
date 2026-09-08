@@ -2,6 +2,8 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import {
   LayoutDashboard,
+  Calendar,
+  UserPlus,
   Users,
   UserCheck,
   FileText,
@@ -62,6 +64,14 @@ export const Sidebar: React.FC<SidebarProps> = ({ isOpen, onClose }) => {
             <NavLink to="/dashboard" className={navItemClass} onClick={onClose}>
               <LayoutDashboard size={18} className="nav-icon" />
               <span>Dashboard</span>
+            </NavLink>
+            <NavLink to="/tahun-ajaran" className={navItemClass} onClick={onClose}>
+              <Calendar size={18} className="nav-icon" />
+              <span>Tahun Ajaran</span>
+            </NavLink>
+            <NavLink to="/calon-siswa" className={navItemClass} onClick={onClose}>
+              <UserPlus size={18} className="nav-icon" />
+              <span>Calon Siswa</span>
             </NavLink>
             <NavLink to="/siswa" className={navItemClass} onClick={onClose}>
               <Users size={18} className="nav-icon" />

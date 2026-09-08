@@ -15,6 +15,10 @@ import { ParentEditPage } from '../../pages/parents/ParentEditPage';
 import { DocumentsPage } from '../../pages/documents/DocumentsPage';
 import { ImportPage } from '../../pages/import/ImportPage';
 import { ExportPage } from '../../pages/export/ExportPage';
+import { AcademicYearsPage } from '../../pages/academic/AcademicYearsPage';
+import { AdmissionsPage } from '../../pages/admissions/AdmissionsPage';
+import { AdmissionCreatePage } from '../../pages/admissions/AdmissionCreatePage';
+import { AdmissionDetailPage } from '../../pages/admissions/AdmissionDetailPage';
 
 export const AppRouter: React.FC = () => {
   return (
@@ -41,6 +45,14 @@ export const AppRouter: React.FC = () => {
           <Route path="/" element={<Navigate to="/dashboard" replace />} />
           <Route path="/dashboard" element={<DashboardPage />} />
           
+          {/* Tahun Ajaran Route */}
+          <Route path="/tahun-ajaran" element={<AcademicYearsPage />} />
+
+          {/* Calon Siswa / Admission Routes */}
+          <Route path="/calon-siswa" element={<AdmissionsPage />} />
+          <Route path="/calon-siswa/tambah" element={<AdmissionCreatePage />} />
+          <Route path="/calon-siswa/:id" element={<AdmissionDetailPage />} />
+
           {/* Data Siswa Routes */}
           <Route path="/siswa" element={<StudentsPage />} />
           <Route path="/siswa/tambah" element={<StudentCreatePage />} />

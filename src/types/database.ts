@@ -137,6 +137,95 @@ export interface ParentUpdate {
   updated_at?: string;
 }
 
+export type AcademicYearStatus = 'active' | 'completed';
+export type AcademicRecordStatus = 'active' | 'promoted' | 'retained' | 'graduated';
+
+export interface AcademicYearRow {
+  id: string;
+  tahun_ajaran: string;
+  status: AcademicYearStatus;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface AcademicYearInsert {
+  id?: string;
+  tahun_ajaran: string;
+  status?: AcademicYearStatus;
+  created_at?: string;
+  updated_at?: string;
+}
+
+export interface AcademicYearUpdate {
+  id?: string;
+  tahun_ajaran?: string;
+  status?: AcademicYearStatus;
+  created_at?: string;
+  updated_at?: string;
+}
+
+export interface StudentAcademicRecordRow {
+  id: string;
+  student_id: string;
+  academic_year_id: string;
+  kelas: number;
+  status: AcademicRecordStatus;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface StudentAcademicRecordInsert {
+  id?: string;
+  student_id: string;
+  academic_year_id: string;
+  kelas: number;
+  status?: AcademicRecordStatus;
+  created_at?: string;
+  updated_at?: string;
+}
+
+export interface StudentAcademicRecordUpdate {
+  id?: string;
+  student_id?: string;
+  academic_year_id?: string;
+  kelas?: number;
+  status?: AcademicRecordStatus;
+  created_at?: string;
+  updated_at?: string;
+}
+
+export type AdmissionStatus = 'candidate' | 'accepted' | 'rejected' | 'cancelled' | 'enrolled';
+
+export interface StudentAdmissionRow {
+  id: string;
+  student_id: string;
+  academic_year_id: string;
+  status: AdmissionStatus;
+  target_kelas: number;
+  created_at: string;
+  updated_at: string;
+}
+
+export interface StudentAdmissionInsert {
+  id?: string;
+  student_id: string;
+  academic_year_id: string;
+  status?: AdmissionStatus;
+  target_kelas?: number;
+  created_at?: string;
+  updated_at?: string;
+}
+
+export interface StudentAdmissionUpdate {
+  id?: string;
+  student_id?: string;
+  academic_year_id?: string;
+  status?: AdmissionStatus;
+  target_kelas?: number;
+  created_at?: string;
+  updated_at?: string;
+}
+
 export interface Database {
   assyifa: {
     Tables: {
@@ -166,9 +255,71 @@ export interface Database {
         Update: Record<string, unknown>;
         Relationships: [];
       };
+      academic_years: {
+        Row: AcademicYearRow;
+        Insert: AcademicYearInsert;
+        Update: AcademicYearUpdate;
+        Relationships: [];
+      };
+      student_academic_records: {
+        Row: StudentAcademicRecordRow;
+        Insert: StudentAcademicRecordInsert;
+        Update: StudentAcademicRecordUpdate;
+        Relationships: [
+          {
+            foreignKeyName: 'student_academic_records_student_id_fkey';
+            columns: ['student_id'];
+            isOneToOne: false;
+            referencedRelation: 'students';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'student_academic_records_academic_year_id_fkey';
+            columns: ['academic_year_id'];
+            isOneToOne: false;
+            referencedRelation: 'academic_years';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
+      student_admissions: {
+        Row: StudentAdmissionRow;
+        Insert: StudentAdmissionInsert;
+        Update: StudentAdmissionUpdate;
+        Relationships: [
+          {
+            foreignKeyName: 'student_admissions_student_id_fkey';
+            columns: ['student_id'];
+            isOneToOne: false;
+            referencedRelation: 'students';
+            referencedColumns: ['id'];
+          },
+          {
+            foreignKeyName: 'student_admissions_academic_year_id_fkey';
+            columns: ['academic_year_id'];
+            isOneToOne: false;
+            referencedRelation: 'academic_years';
+            referencedColumns: ['id'];
+          }
+        ];
+      };
     };
     Views: Record<string, unknown>;
-    Functions: Record<string, unknown>;
+    Functions: {
+      enroll_student_admission: {
+        Args: {
+          p_admission_id: string;
+        };
+        Returns: {
+          success: boolean;
+          admission_id: string;
+          student_id: string;
+          academic_year_id: string;
+          academic_record_id: string;
+          message: string;
+        };
+      };
+    };
     Enums: Record<string, unknown>;
     CompositeTypes: Record<string, unknown>;
   };
